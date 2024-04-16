@@ -1,5 +1,11 @@
 # Ordering Backend for Frontend
 
+## System Requirements
+
+- Node 20
+- PNPM
+- Nest CLI
+
 ## 1. Getting started
 
 ### 1.1 Project configuration
