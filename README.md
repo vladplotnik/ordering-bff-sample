@@ -1,5 +1,11 @@
 # Ordering Backend for Frontend
 
+An example of BFF implementation using [NestJS 10](https://nestjs.com/)
+
+- Fast HTTP server with [Fastify](https://fastify.dev/)
+- Designed for Docker environments (includes Dockerfile and environment variables)
+- Swagger documentation, Winston logger, security guard, etc
+
 ## System Requirements
 
 - Node 20
@@ -24,7 +30,7 @@ pnpm install
 pnpm run start
 ```
 
-You can now head to `http://localhost:3000/docs` and see your API Swagger docs. The example location API is located at the `http://localhost:3000/api/v1/locations` endpoint.
+You can now head to `http://localhost:3000/swagger` and see your API Swagger docs. The example location API is located at the `http://localhost:5000/api/locations` endpoint.
 
 ## 2. Project structure
 
