@@ -33,11 +33,14 @@ Designing a BFF using NestJS provides a structured and scalable approach to mana
 - Implement filters in NestJS to catch and format errors consistently.
 - Use built-in exceptions like `NotFoundException`, `BadRequestException` or define custom exception filters.
 - Use class-validator and class-transformer in DTOs to validate incoming data.
-- Create global pipes for automatic validation.
+- Use NestJS validation pipes to ensure only valid and expected data is processed.
 
-### 1.4 Authorization
+### 1.4 Security
 
-- Secure routes using guards and decorators that check tokens and permissions.
+- Secure routes using guards and decorators to ensure that no endpoint can be accessed without passing an access token.
+- Ensure that all data transmitted between the client, BFF, and backend services is encrypted using HTTPS to prevent interception.
+- Protect your BFF against denial-of-service attacks by implementing rate limiting on incoming requests.
+- Configure CORS to allow requests only from trusted domains and avoid cross-site scripting attacks.
 
 ### 1.5 Logging and Monitoring
 
@@ -167,7 +170,7 @@ Organizing a NestJS application in this way ensures that it is modular and maint
 
 ## 4. Security
 
-A key feature of BFF security is the use of AppCheck tokens to verify client applications before granting access to its resources. This ensures that only requests from trusted client apps are processed, reducing the risk of malicious attacks. The BFF uses a NestJS [Guard](https://docs.nestjs.com/guards) to intercept all incoming requests and validate the AppCheck tokens. The AppCheck guard is configured globally to ensure that no endpoint can be accessed without passing a token. Each request from the client app to the BFF must include the AppCheck token in the request headers. See the code example below.
+A key feature of BFF security is the use of AppCheck tokens to verify client applications before granting access to its resources. This ensures that only requests from trusted client apps are processed, reducing the risk of malicious attacks. The BFF uses a NestJS [Guard](https://docs.nestjs.com/guards) to intercept all incoming requests and validate the AppCheck tokens. Each request from the client app to the BFF must include the AppCheck token in the request headers. See the code example below.
 
 ```ts
 const token = await getAppCheckToken();
