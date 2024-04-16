@@ -1,6 +1,6 @@
 # Ordering Backend for Frontend
 
-An example of BFF implementation using [NestJS 10](https://nestjs.com/). It's a framework for building efficient, scalable Node.js server-side applications. It uses progressive JavaScript and is built with TypeScript.
+An example of Backend for Frontend (BFF) implementation using [NestJS 10](https://nestjs.com/). It's a framework for building efficient, scalable Node.js server-side applications. It uses progressive JavaScript and is built with TypeScript.
 
 - Fast HTTP server with [Fastify](https://fastify.dev/) (can serve a large number of concurrent requests up to 30K req/sec)
 - Designed for Docker environments (includes Dockerfile and environment variables)
@@ -14,7 +14,7 @@ An example of BFF implementation using [NestJS 10](https://nestjs.com/). It's a 
 
 ## Design guidelines
 
-Here’s a recommended design approach for a BFF application using NestJS modular approach:
+Designing a BFF using NestJS provides a structured and scalable approach to managing the communication between client-side apps and backend services. Here are some design guidelines to help you create an efficient and maintainable BFF application:
 
 - Identify functional areas. Break down your application based on its functional areas. For instance, consider creating a module for each backend service integration.
 - Create domain-specific modules. For each identified domain area, create a separate module. The provided BFF example includes several modules such as `location` and `store` correspond to distinct domain areas.
