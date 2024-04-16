@@ -12,24 +12,51 @@ An example of Backend for Frontend (BFF) implementation using [NestJS 10](https:
 - PNPM
 - Nest CLI
 
-## Design guidelines
+## 1. Design guidelines
 
-Designing a BFF using NestJS provides a structured and scalable approach to managing the communication between client-side apps and backend services. Here are some design guidelines to help you create an efficient and maintainable BFF application:
+Designing a BFF using NestJS provides a structured and scalable approach to managing the communication between client-side apps and backend services. Here are some design guidelines to help you create an efficient and maintainable BFF application.
 
-- Identify functional areas. Break down your application based on its functional areas. For instance, consider creating a module for each backend service integration.
-- Create domain-specific modules. For each identified domain area, create a separate module. The provided BFF example includes several modules such as `location` and `store` correspond to distinct domain areas.
+### 1.1 Project structure
+
+- Create domain-specific modules. For each identified domain area, create a separate module. The provided BFF example includes several modules such as `location` and `store` that correspond to specific domain areas.
 - Share common functionality. Create a shared module for common utilities, providers and services that are used across different parts of the application. Examples include logging, error handling, configuration, and security utilities.
-- Modularize by frontend needs. Since a BFF typically tailors the backend to fit the needs of a specific frontend, consider modularizing based on the client app's needs. For instance, you might create separate modules that optimize performance and user experience for different platforms, like mobile and web apps.
+- Evaluate and refactor regularly. As the BFF project evolves, continuously evaluate whether the current design approach still makes sense. Refactor modules to adapt to new requirements or changes in the application structure.
+
+### 1.2 API design
+
 - Keep controllers light. Place business logic in services rather than directly in controllers. Controllers should primarily handle HTTP requests and delegate business processing to services. This makes your controllers easier to maintain and test.
 - Create type definitions. Exposing data types as part of the API allows client apps to integrate more seamlessly. These types ensure that both BFF and client apps agree on the data structures, leading to fewer integration issues.
-- Create Swagger API documentation. Swagger serves as an excellent documentation tool. Developers can understand APIs just by looking at the endpoint signatures and data structures.
-- Evaluate and refactor regularly. As the BFF project evolves, continuously evaluate whether the current design approach still makes sense. Refactor modules to adapt to new requirements or changes in the application structure.
+- Aggregate data from different services in the BFF to tailor responses suited for the frontend requirements. Minimize client-side logic by handling complex computations and transformations at the BFF application.
+
+### 1.3 Error Handling and Validation
+
+- Implement filters in NestJS to catch and format errors consistently.
+- Use built-in exceptions like `NotFoundException`, `BadRequestException` or define custom exception filters.
+- Use class-validator and class-transformer in DTOs to validate incoming data.
+- Create global pipes for automatic validation.
+
+### 1.4 Authorization
+
+- Secure routes using guards and decorators that check tokens and permissions.
+
+### 1.5 Logging and Monitoring
+
+- Use built-in NestJS logger or integrate third-party logging tools like Winston.
+- Log requests, responses, and system events for auditing and debugging.
+- Integrate monitoring tools like Datadog. Monitor application health, request rates, error rates, and performance metrics.
+
+### 1.5 Testing and Documentation
+
+- Write unit and integration tests. Ensure high code coverage to maintain code quality and reduce bugs.
+- Use Swagger to generate API documentation. Developers can understand APIs just by looking at the endpoint signatures and data structures.
+- Ensure that the API documentation is constantly updated with API changes.
+
 
 By following these guidelines, you can leverage NestJS modular system to build a BFF that is scalable, maintainable, and well-organized, which can adapt to the changing needs of the client apps.
 
-## 1. Getting started
+## 2. Getting started
 
-### 1.1 Project configuration
+### 2.1 Project configuration
 
 Start by installing the [Nest CLI](https://docs.nestjs.com/cli/overview). It is a command-line interface tool that helps you to initialize, develop, and maintain your Nest applications.
 
@@ -58,7 +85,7 @@ For the BFF application to interact effectively with various services, it is ess
 
 For a standard development configuration, you can leave the default values for `API_PORT`, `API_PREFIX` and `SWAGGER_ENABLE`.
 
-### 1.2 Launch
+### 2.2 Launch
 
 You are now ready to launch the BFF application using the command below.
 
@@ -68,7 +95,7 @@ pnpm run start
 
 You can head to `http://localhost:5000/swagger` and see your API Swagger docs. The example location API is located at the `http://localhost:5000/api/locations` endpoint.
 
-### 1.3 Default commands
+### 2.3 Default commands
 
 The PNPM commands below can be used to run, build and test the application.
 
@@ -89,7 +116,7 @@ pnpm run test
 pnpm run lint
 ```
 
-## 2. Project structure
+## 3. Project structure
 
 NestJS encourages dividing the application into modules which help in organizing the application by breaking it into logical chunks. Each module corresponds to a feature or closely related set of features. Here’s how a BFF application can be structured:
 
@@ -138,7 +165,7 @@ src/
 
 Organizing a NestJS application in this way ensures that it is modular and maintainable. Each module has everything it needs to operate independently, which simplifies the development, testing, and debugging processes.
 
-## 3. Security
+## 4. Security
 
 A key feature of BFF security is the use of AppCheck tokens to verify client applications before granting access to its resources. This ensures that only requests from trusted client apps are processed, reducing the risk of malicious attacks. The BFF uses a NestJS [Guard](https://docs.nestjs.com/guards) to intercept all incoming requests and validate the AppCheck tokens. The AppCheck guard is configured globally to ensure that no endpoint can be accessed without passing a token. Each request from the client app to the BFF must include the AppCheck token in the request headers. See the code example below.
 
@@ -157,7 +184,7 @@ const response = await fetch(
 );
 ```
 
-## 4. Testing
+## 5. Testing
 
 Modularization can simplify testing. When controllers and their dependencies are contained within a module, it’s easier to mock dependencies and set up tests for just the part of the application that each test concerns.
 
