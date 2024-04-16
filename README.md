@@ -30,10 +30,10 @@ copy .env.example .env
 
 For the BFF application to interact effectively with various services, it is essential to configure environment variables.
 
-- API Gateway URL: Set the base URL for routing requests.
-- Swell: Include your store ID and secret key for authentication.
-- Sanity: Provide API version, dataset, project ID, and an API token.
-- Firebase Project ID: Provide project ID.
+- `API Gateway URL`: Set the base URL for routing requests.
+- `Swell`: Include your store ID and secret key for authentication.
+- `Sanity`: Provide API version, dataset, project ID, and an API token.
+- `Firebase Project ID`: Provide project ID.
 
 For a standard development configuration, you can leave the default values for `API_PORT` and `API_PREFIX`. The `SWAGGER_ENABLE` rule allows you to control the Swagger documentation module for NestJS. 
 
