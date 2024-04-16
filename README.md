@@ -60,6 +60,27 @@ pnpm run start
 
 You can head to `http://localhost:5000/swagger` and see your API Swagger docs. The example location API is located at the `http://localhost:5000/api/locations` endpoint.
 
+### 1.3 Default commands
+
+The PNPM commands below can be used to run, build and test the application.
+
+```bash
+# Run the application in watch mode
+pnpm run start:dev
+
+# Run the application in production mode
+pnpm run start:prod
+
+# Compiles the application into the output folder
+pnpm run build
+
+# Run unit tests
+pnpm run test
+
+# Lint the project files
+pnpm run lint
+```
+
 ## 2. Project structure
 
 NestJS encourages dividing the application into modules which help in organizing the application by breaking it into logical chunks. Each module corresponds to a feature or closely related set of features. Here’s how a BFF application can be structured:
@@ -109,31 +130,7 @@ src/
 
 Organizing a NestJS application in this way ensures that it is modular and maintainable. Each module has everything it needs to operate independently, which simplifies the development, testing, and debugging processes.
 
-## 3. Default NPM commands
-
-The NPM commands below can be used to quickly run, build and test the application.
-
-```bash
-# Run the application
-pnpm run start
-
-# Run the application in watch mode
-pnpm run start:dev
-
-# Run the application in production mode
-pnpm run start:prod
-
-# Compiles the application into output folder
-pnpm run build
-
-# Run unit tests
-pnpm run test
-
-# Lint the project files
-pnpm run lint
-```
-
-## 4. Security
+## 3. Security
 
 A key feature of BFF security is the use of AppCheck tokens to verify client applications before granting access to its resources. This ensures that only requests from trusted client apps are processed, reducing the risk of malicious attacks. The BFF uses a NestJS [Guard](https://docs.nestjs.com/guards) to intercept all incoming requests and validate the AppCheck tokens. The AppCheck guard is configured globally to ensure that no endpoint can be accessed without passing a token. Each request from the client app to the BFF must include the AppCheck token in the request headers. See the code example below.
 
@@ -152,7 +149,7 @@ const response = await fetch(
 );
 ```
 
-## 5. Testing
+## 4. Testing
 
 Modularization can simplify testing. When controllers and their dependencies are contained within a module, it’s easier to mock dependencies and set up tests for just the part of the application that each test concerns.
 
