@@ -28,7 +28,7 @@ Designing a BFF using NestJS provides a structured and scalable approach to mana
 - Create type definitions. Exposing data types as part of the API allows client apps to integrate more seamlessly. These types ensure that both BFF and client apps agree on the data structures, leading to fewer integration issues.
 - Aggregate data from different services in the BFF to tailor responses suited for the frontend requirements. Minimize client-side logic by handling complex computations and transformations at the BFF application.
 
-### 1.3 Error Handling and Validation
+### 1.3 Error handling and Validation
 
 - Implement filters in NestJS to catch and format errors consistently.
 - Use built-in exceptions like `NotFoundException`, `BadRequestException` or define custom exception filters.
