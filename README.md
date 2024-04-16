@@ -87,7 +87,7 @@ For the BFF application to interact effectively with various services, it is ess
 
 For a standard development configuration, you can leave the default values for `API_PORT`, `API_PREFIX` and `SWAGGER_ENABLE`.
 
-### 2.2 Launch
+### 2.2 Launch application
 
 You are now ready to launch the BFF application using the command below.
 
