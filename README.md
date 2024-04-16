@@ -113,6 +113,16 @@ pnpm run test
 pnpm run lint
 ```
 
+## 4. Testing
+
+Unit tests can be run using the following command:
+
+```bash
+pnpm run test
+```
+
+The project uses [Jest](https://jestjs.io/) to execute all tests within the project. The unit tests are placed alongside the modules they verify and have a `.spec.ts` extension.
+
 ## 3. Example of usage
 
 Below you can find an example of BFF API invocation.
