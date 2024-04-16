@@ -12,6 +12,19 @@ An example of BFF implementation using [NestJS 10](https://nestjs.com/). It's a 
 - PNPM
 - Nest CLI
 
+## Design guidelines
+
+Here’s a recommended design approach for a BFF application:
+
+1. Identify distinct functional areas. Break down your application based on its functional areas. For instance, consider creating a module for each backend service integration.
+2. Create domain-specific modules. For example, location, store and order processing might be separate modules.
+3. Create shared modules for common utilities, providers and services that are used across different parts of the application. Examples include logging, error handling, configuration, and security utils.
+4. Modularize by frontend needs. Since a BFF typically tailors the backend to fit the needs of a specific frontend, consider modularizing based on the frontend needs. This could mean having a module per feature on the frontend.
+5. Keep controllers light. Place business logic in services rather than directly in controllers. Controllers should primarily handle HTTP requests and delegate business processing to services. This makes your controllers easier to maintain and test.
+6. Evaluate and refactor regularly. As the project evolves, continuously evaluate whether the current modularization still makes sense. Refactor modules to adapt to new requirements or changes in the application structure.
+
+By following these guidelines, you can leverage NestJS modular system to build a BFF that is scalable, maintainable, and well-organized, which can adapt to the changing needs of the client apps.
+
 ## 1. Getting started
 
 ### 1.1 Project configuration
@@ -139,20 +152,7 @@ const response = await fetch(
 );
 ```
 
-## 5. Best practices
-
-Here’s a recommended design approach for a NestJS BFF application:
-
-1. Identify distinct functional areas. Break down your application based on its functional areas. For instance, consider creating a module for each backend service integration.
-2. Create domain-specific modules. For example, location, store and order processing might be separate modules.
-3. Create shared modules for common utilities, providers and services that are used across different parts of the application. Examples include logging, error handling, configuration, and security utils.
-4. Modularize by frontend needs. Since a BFF typically tailors the backend to fit the needs of a specific frontend, consider modularizing based on the frontend needs. This could mean having a module per feature on the frontend.
-5. Keep controllers light. Place business logic in services rather than directly in controllers. Controllers should primarily handle HTTP requests and delegate business processing to services. This makes your controllers easier to maintain and test.
-6. Evaluate and refactor regularly. As the project evolves, continuously evaluate whether the current modularization still makes sense. Refactor modules to adapt to new requirements or changes in the application structure.
-
-By following these guidelines, you can leverage NestJS modular system to build a BFF that is scalable, maintainable, and well-organized, which can adapt to the changing needs of the client apps.
-
-## 6. Testing
+## 5. Testing
 
 Unit tests can be run using the following command:
 
