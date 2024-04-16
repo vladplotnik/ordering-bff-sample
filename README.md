@@ -28,9 +28,7 @@ Once the dependencies are installed, you can now configure your project by creat
 copy .env.example .env
 ```
 
-For a standard development configuration, you can leave the default values for `API_PORT` and `API_PREFIX`. The `SWAGGER_ENABLE` rule allows you to control the Swagger documentation module for NestJS.
-
-
+For a standard development configuration, you can leave the default values for `API_PORT` and `API_PREFIX`. The `SWAGGER_ENABLE` rule allows you to control the Swagger documentation module for NestJS. Configure the API Gateway URL, Swell, Sanity, and Firebase settings accordingly.
 
 ### 1.2 Launch
 
@@ -44,7 +42,7 @@ pnpm install
 pnpm run start
 ```
 
-You can now head to `http://localhost:3000/swagger` and see your API Swagger docs. The example location API is located at the `http://localhost:5000/api/locations` endpoint.
+You can head to `http://localhost:5000/swagger` and see your API Swagger docs. The example location API is located at the `http://localhost:5000/api/locations` endpoint.
 
 ## 2. Project structure
 
