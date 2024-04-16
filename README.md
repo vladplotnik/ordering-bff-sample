@@ -16,19 +16,19 @@ An example of Backend for Frontend (BFF) implementation using [NestJS 10](https:
 
 Designing a BFF using NestJS provides a structured and scalable approach to managing the communication between client-side apps and backend services. Here are some design guidelines to help you create an efficient and maintainable BFF application.
 
-### 1.1 Project Structure
+### 1.1 Project structure
 
 - Create domain-specific modules. For each identified domain area, create a separate module. The provided BFF example includes several modules such as `location` and `store` that correspond to specific domain areas.
 - Share common functionality. Create a shared module for common utilities, providers and services that are used across different parts of the application. Examples include logging, error handling, configuration, and security utilities.
 - Evaluate and refactor regularly. As the BFF project evolves, continuously evaluate whether the current design approach still makes sense. Refactor modules to adapt to new requirements or changes in the application structure.
 
-### 1.2 API Design
+### 1.2 API design
 
 - Keep controllers light. Place business logic in services rather than directly in controllers. Controllers should primarily handle HTTP requests and delegate business processing to services. This makes your controllers easier to maintain and test.
 - Create type definitions. Exposing data types as part of the API allows client apps to integrate more seamlessly. These types ensure that both BFF and client apps agree on the data structures, leading to fewer integration issues.
 - Aggregate data from different services in the BFF to tailor responses suited for the frontend requirements. Minimize client-side logic by handling complex computations and transformations at the BFF application.
 
-### 1.3 Error Handling and Validation
+### 1.3 Error handling and Validation
 
 - Implement filters in NestJS to catch and format errors consistently.
 - Use built-in exceptions like `NotFoundException`, `BadRequestException` or define custom exception filters.
