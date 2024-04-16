@@ -113,25 +113,11 @@ pnpm run test
 pnpm run lint
 ```
 
-## 4. Testing
-
-Unit tests can be run using the following command:
-
-```bash
-pnpm run test
-```
-
-The project uses [Jest](https://jestjs.io/) to execute all tests within the project. The unit tests are placed alongside the modules they verify and have a `.spec.ts` extension.
-
-## 5. Security measures
+## 4. Security measures
 
 A key feature of BFF security is the use of AppCheck tokens to verify client applications before granting access to its resources. This ensures that only requests from authenticated and authorized client apps are processed, reducing the risk of malicious attacks.
 
-The BFF uses a NestJS [Guard](https://docs.nestjs.com/guards) mechanism, which intercepts all incoming requests to validate the presence and authenticity of AppCheck tokens. The AppCheck guard is configured globally to ensure that no endpoint can be accessed without passing a token.
-
-## 6. Example of usage
-
-Below you can find an example of BFF API invocation.
+The BFF uses a NestJS [Guard](https://docs.nestjs.com/guards) mechanism, which intercepts all incoming requests to validate the presence and authenticity of AppCheck tokens. The AppCheck guard is configured globally to ensure that no endpoint can be accessed without passing a token. Find the code example below.
 
 ```ts
 const token = await getAppCheckToken();
@@ -148,4 +134,12 @@ const response = await fetch(
 );
 ```
 
+## 5. Testing
 
+Unit tests can be run using the following command:
+
+```bash
+pnpm run test
+```
+
+The project uses [Jest](https://jestjs.io/) to execute all tests within the project. The unit tests are placed alongside the modules they verify and have a `.spec.ts` extension.
