@@ -35,10 +35,6 @@ For a standard development configuration, you can leave the default values for `
 You are now ready to launch the BFF application using the command below.
 
 ```bash
-# Install project dependencies
-pnpm install
-
-# Run the application
 pnpm run start
 ```
 
