@@ -6,7 +6,6 @@ An example of Backend for Frontend (BFF) implementation using [NestJS 10](https:
 - Modularized project structure for better organization and maintenance
 - Comprehensive API documentation with [Swagger](https://github.com/nestjs/swagger)
 - Docker compatibility (includes Dockerfile and environment variables)
-- Swagger documentation, Winston logger, security guard, etc
 
 ## System requirements
 
