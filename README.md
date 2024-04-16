@@ -35,7 +35,7 @@ For the BFF application to interact effectively with various services, it is ess
 - `Sanity`: Provide API version, dataset, project ID, and an API token.
 - `Firebase Project ID`: Provide project ID.
 
-For a standard development configuration, you can leave the default values for `API_PORT` and `API_PREFIX`. The `SWAGGER_ENABLE` rule allows you to control the Swagger documentation module for NestJS. 
+For a standard development configuration, you can leave the default values for `API_PORT` and `API_PREFIX`. The `SWAGGER_ENABLE` variable allows you to control the Swagger documentation module for NestJS. 
 
 ### 1.2 Launch
 
