@@ -2,7 +2,7 @@ import { INestApplication } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { AppOptions, initializeApp } from 'firebase-admin/app';
+import { initializeApp } from 'firebase-admin/app';
 
 import { ApplicationModule } from './app.module';
 import { AppCheckContext, AppCheckGuard, CommonModule, LogInterceptor } from './common';
@@ -49,15 +49,10 @@ function createSwagger(app: INestApplication) {
  * Enable AppCheck token validation
  */
 function enableAppCheck(app: INestApplication) {
-    initializeApp({
-        apiKey: process.env.FIREBASE_API_KEY,
-        authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    const firebaseConfig = {
         projectId: process.env.FIREBASE_PROJECT_ID,
-        storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-        messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-        appId: process.env.FIREBASE_APP_ID,
-        measurementId: process.env.FIREBASE_MEASUREMENT_ID,
-    } as AppOptions);
+    };
+    initializeApp(firebaseConfig);
 
     const appCheckContext = app.get(AppCheckContext);
     app.useGlobalGuards(new AppCheckGuard(appCheckContext));
