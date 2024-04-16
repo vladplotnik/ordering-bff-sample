@@ -2,7 +2,7 @@
 
 An example of Backend for Frontend (BFF) implementation using [NestJS 10](https://nestjs.com/). It's a framework for building efficient, scalable Node.js server-side applications. It uses progressive JavaScript and is built with TypeScript.
 
-- Fast HTTP server with [Fastify](https://fastify.dev/) (can serve a large number of concurrent requests up to 30K req/sec)
+- Fast HTTP server with [Fastify](https://fastify.dev/) efficiently handles up to 30,000 requests per second
 - Modularized project structure for better organization and maintenance
 - Comprehensive API documentation with [Swagger](https://github.com/nestjs/swagger)
 - Docker compatibility (includes Dockerfile and environment variables)
