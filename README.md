@@ -46,7 +46,7 @@ NestJS encourages dividing the application into modules which help in organizing
 
 ```bash
 src/
-├── common/  # The common module contains pipes, services and providers used in the whole application
+├── common/  # The common module contains pipes, services and providers that can be reused across different modules
 │   ├── flows/
 │   │   └── log.interceptor.ts
 │   ├── models/
@@ -86,6 +86,8 @@ src/
 ├── app.module.ts
 └── main.ts
 ```
+
+Organizing a NestJS application in this way ensures that it is modular and maintainable. Each module has everything it needs to operate independently, which simplifies the development, testing, and debugging processes.
 
 ## 3. Default NPM commands
 
