@@ -1,6 +1,6 @@
 # Ordering Backend for Frontend
 
-An example of BFF implementation using [NestJS 10](https://nestjs.com/)
+An example of BFF implementation using [NestJS 10](https://nestjs.com/). NestJS is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. It is built with TypeScript. The project includes the following:
 
 - Fast HTTP server with [Fastify](https://fastify.dev/)
 - Designed for Docker environments (includes Dockerfile and environment variables)
