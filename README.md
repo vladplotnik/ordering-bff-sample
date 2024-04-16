@@ -16,7 +16,7 @@ An example of BFF implementation using [NestJS 10](https://nestjs.com/). It's a 
 
 Here’s a recommended design approach for a BFF application:
 
-1. Identify distinct functional areas. Break down your application based on its functional areas. For instance, consider creating a module for each backend service integration.
+1. Identify functional areas. Break down your application based on its functional areas. For instance, consider creating a module for each backend service integration.
 2. Create domain-specific modules. For each identified domain area, create a separate module. The provided BFF example includes several modules such as `location` and `store` correspond to distinct domain areas.
 3. Create shared modules for common utilities, providers and services that are used across different parts of the application. Examples include logging, error handling, configuration, and security utils.
 4. Modularize by frontend needs. Since a BFF typically tailors the backend to fit the needs of a specific frontend, consider modularizing based on the frontend needs. This could mean having a module per feature on the frontend.
