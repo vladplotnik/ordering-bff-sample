@@ -2,7 +2,7 @@
 
 An example of BFF implementation using [NestJS 10](https://nestjs.com/). It's a framework for building efficient, scalable Node.js server-side applications. It uses progressive JavaScript and is built with TypeScript.
 
-- Fast HTTP server with [Fastify](https://fastify.dev/) (it can handle a large number of concurrent requests without blocking the event loop)
+- Fast HTTP server with [Fastify](https://fastify.dev/) (it can handle a large number of concurrent requests up to 30k req/sec)
 - Designed for Docker environments (includes Dockerfile and environment variables)
 - Swagger documentation, Winston logger, security guard, etc
 
