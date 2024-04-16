@@ -42,7 +42,7 @@ You can head to `http://localhost:5000/swagger` and see your API Swagger docs. T
 
 ## 2. Project structure
 
-This BFF application uses the following directory structure.
+NestJS encourages dividing the application into modules which help in organizing the application by breaking it into logical chunks. Each module corresponds to a feature or closely related set of features. Here’s how a BFF application can be structured:
 
 ```bash
 src/
