@@ -154,6 +154,8 @@ const response = await fetch(
 
 ## 5. Testing
 
+Modularization can simplify testing. When controllers and their dependencies are contained within a module, it’s easier to mock dependencies and set up tests for just the part of the application that each test concerns.
+
 Unit tests can be run using the following command:
 
 ```bash
