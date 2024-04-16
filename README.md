@@ -6,7 +6,7 @@ An example of BFF implementation using [NestJS 10](https://nestjs.com/). It's a 
 - Designed for Docker environments (includes Dockerfile and environment variables)
 - Swagger documentation, Winston logger, security guard, etc
 
-## System Requirements
+## System requirements
 
 - Node 20
 - PNPM
