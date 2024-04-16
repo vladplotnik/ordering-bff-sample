@@ -16,14 +16,28 @@ An example of BFF implementation using [NestJS 10](https://nestjs.com/)
 
 ### 1.1 Project configuration
 
-Configure your project by creating a new `.env` file containing the environment variables used for development. The `SWAGGER_ENABLE` rule allows you to control the Swagger documentation module for NestJS.
+Start by installing project dependencies.
+
+```bash
+pnpm install
+```
+
+Once the dependencies are installed, you can now configure your project by creating a new `.env` file containing the environment variables used for development.
+
+```bash
+copy .env.example .env
+```
+
+For a standard development configuration, you can leave the default values for `API_PORT` and `API_PREFIX`. The `SWAGGER_ENABLE` rule allows you to control the Swagger documentation module for NestJS.
+
+
 
 ### 1.2 Launch
 
 You are now ready to launch the BFF application using the command below.
 
-```sh
-# Install dependencies
+```bash
+# Install project dependencies
 pnpm install
 
 # Run the application
@@ -36,7 +50,7 @@ You can now head to `http://localhost:3000/swagger` and see your API Swagger doc
 
 This BFF application uses the following directory structure.
 
-```sh
+```bash
 src/
 ├── common/  # The common module contains pipes, services and providers used in the whole application
 │   ├── flows/
@@ -83,7 +97,7 @@ src/
 
 The NPM commands below can be used to quickly run, build and test the application.
 
-```sh
+```bash
 # Run the application
 pnpm run start
 
