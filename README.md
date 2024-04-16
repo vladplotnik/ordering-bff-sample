@@ -28,7 +28,7 @@ Once the dependencies are installed, you can now configure your project by creat
 copy .env.example .env
 ```
 
-For a standard development configuration, you can leave the default values for `API_PORT` and `API_PREFIX`. The `SWAGGER_ENABLE` rule allows you to control the Swagger documentation module for NestJS. Configure the API Gateway URL, Swell, Sanity, and Firebase settings accordingly.
+For a standard development configuration, you can leave the default values for `API_PORT` and `API_PREFIX`. The `SWAGGER_ENABLE` rule allows you to control the Swagger documentation module for NestJS. Configure the rest of the variables including `API_GATEWAY_BASE_URL`, `SWELL_`, `SANITY_`, and `FIREBASE_` settings accordingly.
 
 ### 1.2 Launch
 
