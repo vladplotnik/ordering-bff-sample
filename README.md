@@ -29,7 +29,13 @@ By following these guidelines, you can leverage NestJS modular system to build a
 
 ### 1.1 Project configuration
 
-Start by installing project dependencies.
+Start by installing the [Nest CLI](https://docs.nestjs.com/cli/overview). It is a command-line interface tool that helps you to initialize, develop, and maintain your Nest applications.
+
+```bash
+pnpm install -g @nestjs/cli
+```
+
+Next, install project dependencies.
 
 ```bash
 pnpm install
